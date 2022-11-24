@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Cross-origin request from &lt;img&gt; tag</title>
+</head>
+
+<body>
+    <h1>Cross-origin request from <code>&lt;img&gt;</code> tag</h1>
+    <p>Using an <code>&lt;img&gt;</code> tag triggers a request for the image, in this case cross-origin.</p>
+    
+    <p>Source origin: <code>http://localhost:3001</code></p>
+    <p>Request origin: <code>http://localhost:8080</code></p>
+
+    <img src="http://localhost:8080/waterfall.jpg" />
+
+    <p>
+        ✅ Request successful
+    </p>
+
+    <a href="link-tag-cross-origin.html">
+        <button type="button">
+            Next example <small>>></small>
+        </button>
+    </a>
+</body>
+
+</html>

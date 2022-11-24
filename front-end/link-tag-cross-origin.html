@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://localhost:8080/funky-text.css">
+    <title>Cross-origin request from &lt;link&gt; tag</title>
+</head>
+
+<body>
+    <h1>Cross-origin request from <code>&lt;link&gt;</code> tag</h1>
+    <p>Using an <code>&lt;link&gt;</code> tag triggers a request for the stylesheet, in this case cross-origin.</p>
+
+    <p>Source origin: <code>http://localhost:3001</code></p>
+    <p>Request origin: <code>http://localhost:8080</code></p>
+
+
+    <h2 class="title">
+        <span class="title-word title-word-1">CSS</span>
+        <span class="title-word title-word-2">from</span>
+        <span class="title-word title-word-3">link</span>
+        <span class="title-word title-word-4">tag</span>
+    </h2>
+
+    <p>
+        ✅ Request successful
+    </p>
+    <a href="image-tag-cross-origin.html">
+        <button type="button">
+            <small>
+                << </small> Previous example
+        </button>
+    </a>
+    <a href="script-tag-cross-origin.html">
+        <button type="button">
+            Next example <small>>></small>
+        </button>
+    </a>
+</body>
+
+</html>
