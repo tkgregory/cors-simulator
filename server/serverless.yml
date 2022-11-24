@@ -5,7 +5,7 @@ provider:
   runtime: nodejs12.x
 functions:
   get-without-cors:
-    handler: get-without-cors.hello
+    handler: get-without-cors.handler
     events:
       - httpApi:
           path: /get-without-cors
