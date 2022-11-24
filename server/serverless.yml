@@ -4,8 +4,8 @@ provider:
   name: aws
   runtime: nodejs12.x
 functions:
-  hello:
-    handler: handler.hello
+  get-without-cors:
+    handler: get-without-cors.hello
     events:
       - httpApi:
           path: /get-without-cors
