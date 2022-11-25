@@ -5,8 +5,26 @@ provider:
   runtime: nodejs12.x
 functions:
   get-without-cors:
-    handler: get-without-cors.handler
+    handler: without-cors/get.handler
     events:
       - httpApi:
           path: /get-without-cors
           method: get
+  post-without-cors:
+    handler: without-cors/post.handler
+    events:
+      - httpApi:
+          path: /post-without-cors
+          method: post
+plugins:
+  - serverless-s3-sync
+custom:
+  s3Sync:
+    - bucketName: tomgregory-cors-examples
+      localDir: assets/
+resources:
+  Resources:
+    Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: tomgregory-cors-examples
