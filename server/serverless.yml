@@ -3,6 +3,15 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs12.x
+params:
+  default:
+    s3BucketName: tomgregory-cors-examples
+plugins:
+  - serverless-s3-sync
+custom:
+  s3Sync:
+    - bucketName: ${param:s3BucketName}
+      localDir: assets/
 functions:
   get-without-cors:
     handler: without-cors/get.handler
@@ -16,15 +25,9 @@ functions:
       - httpApi:
           path: /post-without-cors
           method: post
-plugins:
-  - serverless-s3-sync
-custom:
-  s3Sync:
-    - bucketName: tomgregory-cors-examples
-      localDir: assets/
 resources:
   Resources:
     Bucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: tomgregory-cors-examples
+        BucketName: ${param:s3BucketName}
