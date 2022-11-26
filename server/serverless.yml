@@ -3,9 +3,11 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs12.x
+  region: eu-west-1
 params:
   default:
-    s3BucketName: tomgregory-cors-examples
+    s3BucketName: tomgregory-cors
+    domainName: cors-examples.tomgregory.com
 plugins:
   - serverless-s3-sync
 custom:
@@ -31,3 +33,25 @@ resources:
       Type: AWS::S3::Bucket
       Properties:
         BucketName: ${param:s3BucketName}
+    ApiDomainName:
+      Type: AWS::ApiGatewayV2::DomainName
+      Properties:
+        DomainName: ${param:domainName}
+        DomainNameConfigurations:
+          - CertificateArn: !ImportValue TomGregoryRegionalCertificate
+    ApiMapping:
+      Type: AWS::ApiGatewayV2::ApiMapping
+      Properties:
+        DomainName: ${param:domainName}
+        ApiId: !Ref HttpApi
+        Stage: '$default'
+    ApiRecordSetGroup:
+      Type: AWS::Route53::RecordSetGroup
+      Properties:
+        HostedZoneId: !ImportValue TomGregorySiteHostedZoneId
+        RecordSets:
+          - Name: ${param:domainName}
+            Type: A
+            AliasTarget:
+              HostedZoneId: !GetAtt ApiDomainName.RegionalHostedZoneId
+              DNSName: !GetAtt ApiDomainName.RegionalDomainName
