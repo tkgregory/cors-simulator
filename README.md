@@ -1,7 +1,13 @@
-`http-server -p 8080 back-end`
+# CORS Examples
 
-`http-server -p 3001 front-end`
+A series of examples to demonstrate important CORS concepts.
+
+## Deploying
 
 ### Create certificate
 
 `serverless create-cert`
+
+### Deploy serverless stack
+
+`serverless deploy`
