@@ -7,7 +7,15 @@
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="stuff.js"></script>
     <script>
-        registerDynamicContent();
+        registerDynamicContent(function() {
+            const image = new Image();
+            image.src = "https://assets.cors-examples.tomgregory.com/waterfall.jpg";
+            image.onload = function () {
+                $("#dynamic").hide().fadeIn('slow');
+                $("#dynamic").append(image);
+                finishDynamicContent(new URL(image.src).origin);
+            }
+        });
     </script>
 </head>
 
@@ -23,7 +31,7 @@
         </div>
 
         <div class="info-box hidden" id="origins">
-            <div class="title">Origins</div>
+            <div class="info-title">Origins</div>
             <div>
                 Source: <code id="source-origin"></code>
             </div>

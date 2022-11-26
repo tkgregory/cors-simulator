@@ -11,7 +11,5 @@ const setTime = function () {
     tagDiv.innerText = "Current time: " + strDay + "/" + strMonth + "/" + strYear + "  " + strHours + ":" + strMinutes + ":" + strSeconds;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    setTime();
- });
+setTime();
 window.setInterval(setTime, 1000);

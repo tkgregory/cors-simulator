@@ -6,20 +6,13 @@ function finishDynamicContent(requestOrigin) {
     $("#origins").removeClass("hidden");
 }
 
-function registerDynamicContent(callbackFunction) {
+function registerDynamicContent(loadDynamicContentFunction) {
     $(document).ready(function () {
         $("#try-it-out").click(function () {
             $("#try-it-out").prop("disabled", true);
             $("#try-it-out").hide();
 
-            const image = new Image();
-            image.src = "https://assets.cors-examples.tomgregory.com/waterfall.jpg";
-            image.onload = function () {
-                finishDynamicContent(new URL(image.src).origin);
-            }
-
-            $("#dynamic").hide().fadeIn('slow');
-            $("#dynamic").append(image);
+            loadDynamicContentFunction();
         });
     });
 }
