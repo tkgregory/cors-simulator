@@ -8,7 +8,7 @@ const setTime = function () {
     var strSeconds = DateTime.getSeconds();
     var tagDiv = document.getElementById("time");
     tagDiv.innerText = "DD/MM/YYYY  HH:MM:SS";
-    tagDiv.innerText = "🕑Current time: " + strDay + "/" + strMonth + "/" + strYear + "  " + strHours + ":" + strMinutes + ":" + strSeconds;
+    tagDiv.innerText = "Current time: " + strDay + "/" + strMonth + "/" + strYear + "  " + strHours + ":" + strMinutes + ":" + strSeconds;
 }
 
 document.addEventListener('DOMContentLoaded', function() {

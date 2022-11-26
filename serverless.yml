@@ -6,15 +6,18 @@ provider:
   region: eu-west-1
 params:
   default:
-    s3BucketName: tomgregory-cors
+    assetsS3BucketName: tomgregory-cors
+    websiteS3BucketName: cors-examples-website
     domainName: cors-examples.tomgregory.com
 plugins:
   - serverless-s3-sync
   - serverless-certificate-creator
 custom:
   s3Sync:
-    - bucketName: ${param:s3BucketName}
+    - bucketName: ${param:assetsS3BucketName}
       localDir: assets/
+    - bucketName: ${param:websiteS3BucketName}
+      localDir: website/
   customCertificate:
     certificateName: 'assets.${param:domainName}'
     hostedZoneIds: Z06426551JRM5G4EGPV2L
@@ -36,7 +39,37 @@ resources:
     Bucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: ${param:s3BucketName}
+        BucketName: ${param:assetsS3BucketName}
+        PublicAccessBlockConfiguration:
+          BlockPublicAcls: true
+          BlockPublicPolicy: true
+          IgnorePublicAcls: true
+          RestrictPublicBuckets: true
+    WebsiteBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${param:websiteS3BucketName}
+        PublicAccessBlockConfiguration:
+          BlockPublicAcls: true
+          BlockPublicPolicy: true
+          IgnorePublicAcls: true
+          RestrictPublicBuckets: true
+    WebsiteBucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket: !Ref WebsiteBucket
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Action:
+                - s3:GetObject
+              Effect: Allow
+              Resource: !Sub 'arn:aws:s3:::${WebsiteBucket}/*'
+              Principal:
+                Service: cloudfront.amazonaws.com
+              Condition:
+                StringEquals:
+                  AWS:SourceArn: !Sub 'arn:aws:cloudfront::${AWS::AccountId}:distribution/${WebsiteCloudFrontDistribution}'
     PublicAccessBucketPolicy:
       Type: AWS::S3::BucketPolicy
       Properties:
@@ -100,6 +133,32 @@ resources:
               - GET
               - HEAD
               - OPTIONS
+    WebsiteCloudFrontDistribution:
+      Type: AWS::CloudFront::Distribution
+      Properties:
+        DistributionConfig:
+          Enabled: true
+          DefaultRootObject: index.html
+          Origins:
+            - Id: S3Origin
+              DomainName: !GetAtt WebsiteBucket.RegionalDomainName
+              OriginAccessControlId: !GetAtt OriginAccessControl.Id
+              S3OriginConfig:
+                OriginAccessIdentity: ''
+          Aliases:
+            - ${param:domainName}
+          ViewerCertificate:
+            AcmCertificateArn: !ImportValue TomGregoryCertificate
+            SslSupportMethod: sni-only
+          DefaultCacheBehavior:
+            TargetOriginId: S3Origin
+            ViewerProtocolPolicy: redirect-to-https
+            CachePolicyId: 4135ea2d-6df8-44a3-9df3-4b5a84be39ad # CachingDisabled
+            OriginRequestPolicyId: 88a5eaf4-2fd4-4709-b370-b4c650ea3fcf # CORS-S3Origin
+            AllowedMethods:
+              - GET
+              - HEAD
+              - OPTIONS
     OriginAccessControl:
       Type: AWS::CloudFront::OriginAccessControl
       Properties:
@@ -116,6 +175,15 @@ resources:
         Type: A
         AliasTarget:
           DNSName: !GetAtt AssetsCloudFrontDistribution.DomainName
+          HostedZoneId: Z2FDTNDATAQYW2 # value as described in AWS docs
+    WebsiteCloudFrontDNSRecord:
+      Type: AWS::Route53::RecordSet
+      Properties:
+        HostedZoneId: !ImportValue TomGregorySiteHostedZoneId
+        Name: ${param:domainName}
+        Type: A
+        AliasTarget:
+          DNSName: !GetAtt WebsiteCloudFrontDistribution.DomainName
           HostedZoneId: Z2FDTNDATAQYW2 # value as described in AWS docs
     CORSExamplesCertificate:
       Type: AWS::CertificateManager::Certificate
