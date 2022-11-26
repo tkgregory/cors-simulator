@@ -3,26 +3,43 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <title>Cross-origin request from &lt;img&gt; tag</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="stuff.js"></script>
+    <script>
+        registerDynamicContent();
+    </script>
 </head>
 
 <body>
-    <h1>Cross-origin request from <code>&lt;img&gt;</code> tag</h1>
-    <p>Using an <code>&lt;img&gt;</code> tag triggers a request for the image, in this case cross-origin.</p>
-    
-    <p>Source origin: <code>http://localhost:3001</code></p>
-    <p>Request origin: <code>https://assets.cors-examples.tomgregory.com:443</code></p>
+    <div class="content">
+        <h1>Cross-origin request from <code>&lt;img&gt;</code> tag</h1>
+        <p>Using an <code>&lt;img&gt;</code> tag triggers a request for the image, in this case cross-origin.</p>
 
-    <img src="https://assets.cors-examples.tomgregory.com/waterfall.jpg" />
+        <div class="dynamic" id="dynamic">
+            <button type="button" id="try-it-out" class="big centred">
+                Try it out!
+            </button>
+        </div>
 
-    <p>
-        &#9989; Request successful
-    </p>
+        <div class="info-box hidden" id="origins">
+            <div class="title">Origins</div>
+            <div>
+                Source: <code id="source-origin"></code>
+            </div>
+            <div>
+                Request: <code id="request-origin"></code>
+            </div>
+        </div>
 
-    <a href="link-tag-cross-origin.html">
-        <button type="button">
-            Next example <small>>></small>
-        </button>
-    </a>
+        <div>
+            <a href="link-tag-cross-origin.html">
+                <button type="button" class="blue">
+                    Next example <small>>></small>
+                </button>
+            </a>
+        </div>
+    </div>
 </body>
 
 </html>
