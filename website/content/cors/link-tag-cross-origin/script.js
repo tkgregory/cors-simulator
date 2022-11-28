@@ -6,7 +6,7 @@ registerDynamicContent(function () {
         href: styleSheetURL,
         onload: function () {
             $("#dynamic").hide().fadeIn('slow');
-            finishDynamicContent(new URL(styleSheetURL).origin);
+            finishDynamicContentSuccess(new URL(styleSheetURL).origin);
         }
     });
 

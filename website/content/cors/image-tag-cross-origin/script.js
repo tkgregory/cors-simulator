@@ -4,6 +4,6 @@ registerDynamicContent(function() {
     image.onload = function () {
         $("#dynamic").hide().fadeIn('slow');
         $("#dynamic").append(image);
-        finishDynamicContent(new URL(image.src).origin);
+        finishDynamicContentSuccess(new URL(image.src).origin);
     }
 });

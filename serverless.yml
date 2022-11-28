@@ -28,6 +28,12 @@ functions:
       - httpApi:
           path: /get-without-cors
           method: get
+  get-with-cors:
+    handler: with-cors/get.handler
+    events:
+      - httpApi:
+          path: /get-with-cors
+          method: get          
   post-without-cors:
     handler: without-cors/post.handler
     events:

@@ -1,5 +1,5 @@
 ---
-title: "Cross-origin GET request from JavaScript code"
+title: "Cross-origin GET request from JavaScript code (no CORS)"
 weight: 4
 ---
 

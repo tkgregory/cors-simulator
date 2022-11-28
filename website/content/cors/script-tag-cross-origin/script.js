@@ -5,7 +5,7 @@ registerDynamicContent(function () {
         type: "text/javascript",
         onload: function () {
             $("#dynamic").hide().fadeIn('slow');
-            finishDynamicContent(new URL(javscriptURL).origin);
+            finishDynamicContentSuccess(new URL(javscriptURL).origin);
         }
     });
 
