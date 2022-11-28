@@ -17,7 +17,7 @@ custom:
     - bucketName: ${param:assetsS3BucketName}
       localDir: assets/
     - bucketName: ${param:websiteS3BucketName}
-      localDir: website/
+      localDir: website/public
   customCertificate:
     certificateName: 'assets.${param:domainName}'
     hostedZoneIds: Z06426551JRM5G4EGPV2L
