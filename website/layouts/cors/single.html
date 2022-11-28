@@ -5,7 +5,7 @@
 {{ .Content }}
 
 {{ with .Resources.GetMatch "script.js" }}
-<script>{ { .Content | safeJS } }</script>
+<script> {{ .Content | safeJS }} </script>
 {{ end }}
 
 <div class="dynamic" id="dynamic">
