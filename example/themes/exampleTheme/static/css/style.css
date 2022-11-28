@@ -1,0 +1,119 @@
+body {
+    background-color: rgb(50, 50, 50);
+    font-family: Tahoma, sans-serif;
+    color: white;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.content {
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box; 
+    max-width: 60%;
+    background-color: rgb(10, 10, 10);
+    min-height: 100%;
+    border-left: medium solid rgb(80, 80, 80);
+    border-right: medium solid rgb(80, 80, 80);
+}
+
+.info-box {
+    display: block;
+    text-align: left;
+    background-color: rgb(220, 220, 220);
+    padding: 10px;
+    margin: 10px;
+    color: black;
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+.dynamic {
+    border: medium dotted #4CAF50;
+    min-height: 300px;
+    margin: 10px;
+    margin-top: 50px;
+    padding: 10px;
+    position: relative;
+}
+
+.centred {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.info-title {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.single-origin {
+    text-transform: none;
+}
+
+code {
+    background-color: rgb(80, 80, 80);
+}
+
+.info-box code {
+    background-color: inherit;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px #545454;
+}
+
+button:hover {
+    background-color: #38843a;
+}
+
+button.big {
+    font-size: 36px;
+}
+
+button.blue {
+    background-color: #1500ff; 
+}
+
+button.blue:hover {
+    background-color: #1100c9; 
+}
+
+.highlight {
+    background-color: rgb(80, 80, 80);
+    display: inline-block;
+    padding: 15px 32px;
+    border-radius: 8px; 
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+
+
+p {
+    font-size: 16px;
+}
+
+img {
+    border: medium solid rgb(80, 80, 80);
+}
