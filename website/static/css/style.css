@@ -108,7 +108,12 @@ button.blue:hover {
     text-transform: uppercase;
 }
 
-
+#response.highlight {
+    text-transform: none;
+    text-align: left;
+    font-weight: 400;
+    font-family: Courier, sans-serif;
+}
 
 p {
     font-size: 16px;
