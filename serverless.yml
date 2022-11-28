@@ -49,11 +49,8 @@ resources:
       Type: AWS::S3::Bucket
       Properties:
         BucketName: ${param:websiteS3BucketName}
-        PublicAccessBlockConfiguration:
-          BlockPublicAcls: true
-          BlockPublicPolicy: true
-          IgnorePublicAcls: true
-          RestrictPublicBuckets: true
+        WebsiteConfiguration:
+          IndexDocument: index.html
     WebsiteBucketPolicy:
       Type: AWS::S3::BucketPolicy
       Properties:
@@ -64,12 +61,8 @@ resources:
             - Action:
                 - s3:GetObject
               Effect: Allow
+              Principal: '*'
               Resource: !Sub 'arn:aws:s3:::${WebsiteBucket}/*'
-              Principal:
-                Service: cloudfront.amazonaws.com
-              Condition:
-                StringEquals:
-                  AWS:SourceArn: !Sub 'arn:aws:cloudfront::${AWS::AccountId}:distribution/${WebsiteCloudFrontDistribution}'
     PublicAccessBucketPolicy:
       Type: AWS::S3::BucketPolicy
       Properties:
@@ -141,10 +134,9 @@ resources:
           DefaultRootObject: index.html
           Origins:
             - Id: S3Origin
-              DomainName: !GetAtt WebsiteBucket.RegionalDomainName
-              OriginAccessControlId: !GetAtt OriginAccessControl.Id
-              S3OriginConfig:
-                OriginAccessIdentity: ''
+              DomainName: !Select [1, !Split ["//", !GetAtt WebsiteBucket.WebsiteURL]]
+              CustomOriginConfig:
+                OriginProtocolPolicy: 'http-only'
           Aliases:
             - ${param:domainName}
           ViewerCertificate:
