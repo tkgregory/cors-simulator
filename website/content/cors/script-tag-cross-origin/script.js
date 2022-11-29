@@ -4,8 +4,7 @@ registerDynamicContent(function () {
         src: javscriptURL,
         type: "text/javascript",
         onload: function () {
-            $("#dynamic").hide().fadeIn('slow');
-            finishDynamicContentSuccess(new URL(javscriptURL).origin);
+            udpateForSuccess(new URL(javscriptURL).origin);
         }
     });
 

@@ -1,11 +1,11 @@
 registerDynamicContent(function () {
-    const requestURL = 'https://api.cors-examples.tomgregory.com/get-without-cors';
-    
-    fetch()
-        .then((response) => response.json())
-        .then((data) => $("#response").html(data))
-        .catch(function (error) {
-            $("#response").html("Got error: \"" + error + "\"\nCheck the Developer Console");
-            finishDynamicContentFailure(new URL(requestURL).origin);
+    const requestURL = "https://api.cors-examples.tomgregory.com/get-without-cors";
+
+    fetch(requestURL)
+        .then((response) => {
+            udpateForSuccessWithResponse(new URL(requestURL).origin, response);
+        })
+        .catch((error) => {
+            updateForFailure(new URL(requestURL).origin, error);
         });
 });

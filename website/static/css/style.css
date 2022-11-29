@@ -75,12 +75,18 @@ button {
     text-align: center;
     font-size: 18px;
     border-radius: 8px;
-    transition-duration: 0.4s;
-    cursor: pointer;
     box-shadow: 1px 1px 2px #545454;
 }
 
-button:hover {
+button.red {
+    background-color: #b02222;
+}
+
+button.enabled {
+    cursor: pointer;
+}
+
+button.enabled:hover {
     background-color: #38843a;
 }
 
