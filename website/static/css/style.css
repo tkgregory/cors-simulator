@@ -9,7 +9,7 @@ body {
 
 .content {
     margin: auto;
-    text-align: center;
+    text-align: left;
     padding: 20px;
     box-sizing: border-box; 
     max-width: 60%;
@@ -18,6 +18,19 @@ body {
     border-left: medium solid rgb(80, 80, 80);
     border-right: medium solid rgb(80, 80, 80);
 }
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    color: rgb(220, 220, 220);
+}
+
+#navigation a {
+    text-decoration: none;
+}
+  
 
 .info-box {
     display: block;
@@ -40,6 +53,7 @@ body {
     margin-top: 50px;
     padding: 10px;
     position: relative;
+    text-align: center;
 }
 
 .centred {
@@ -77,30 +91,36 @@ button {
     border-radius: 8px;
     box-shadow: 1px 1px 2px #545454;
     z-index: 1;
+    cursor: pointer;
+}
+
+
+#navigation button {
+    background-color: #1500ff; 
+}
+
+#navigation button:hover {
+    background-color: #1100c9; 
 }
 
 button.red {
     background-color: #b02222;
 }
 
-button.enabled {
-    cursor: pointer;
+button.disabled {
+    cursor: auto;
 }
 
-button.enabled:hover {
+button.disabled:hover {
+    background-color: #4CAF50;
+}
+
+button:hover {
     background-color: #38843a;
 }
 
 button.big {
     font-size: 36px;
-}
-
-button.blue {
-    background-color: #1500ff; 
-}
-
-button.blue:hover {
-    background-color: #1100c9; 
 }
 
 .highlight {
@@ -123,9 +143,22 @@ button.blue:hover {
 }
 
 p {
-    font-size: 16px;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 26px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: normal;
 }
 
 img {
     border: medium solid rgb(80, 80, 80);
+}
+
+#navigation {
+    text-align: center;
 }

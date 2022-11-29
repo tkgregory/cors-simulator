@@ -54,7 +54,7 @@ function registerDynamicContent(loadDynamicContentFunction) {
     $(document).ready(function () {
         $("#try-it-out").click(function () {
             $("#try-it-out").prop("disabled", true);
-            $("#try-it-out").removeClass("enabled");
+            $("#try-it-out").addClass("disabled");
 
             loadDynamicContentFunction();
         });

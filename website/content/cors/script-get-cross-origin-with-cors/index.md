@@ -1,6 +1,6 @@
 ---
 title: "Cross-origin GET request from JavaScript code (with CORS)"
-weight: 4
+weight: 5
 ---
 
 # Cross-origin GET request from JavaScript code (with CORS)

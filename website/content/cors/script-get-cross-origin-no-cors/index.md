@@ -7,4 +7,4 @@ weight: 4
 
 JavaScript code can make a cross-origin GET request.
 
-Unless the response includes the correct CORS headers, the browser discard it.
+Unless the response includes the correct CORS headers, the browser discards it.

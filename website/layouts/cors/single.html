@@ -1,5 +1,6 @@
 {{ define "main" }}
 
+<h2>Example {{ .Weight }}</h2>
 {{ .Content }}
 
 {{ with .Resources.GetMatch "script.js" }}
@@ -19,7 +20,7 @@
 <div class="info-box hidden" id="response-data">
   <div id="error" class="hidden">
     <div class="info-title">Error</div>
-  </div>  
+  </div>
   <div id="body" class="hidden">
     <div class="info-title">Body</div>
   </div>
@@ -31,26 +32,33 @@
   </div>
 </div>
 
-<div>
-  {{ $pages := where site.RegularPages "Section" .Section }}
-  {{ $orderedPages := $pages.ByWeight.Reverse }}
+<div id="navigation">
+    {{ $pages := where site.RegularPages "Section" .Section }}
+    {{ $orderedPages := $pages.ByWeight.Reverse }}
 
-  {{ with $orderedPages.Prev . }}
-  <a href="{{ .Permalink }}">
-    <button type="button" class="blue">
-      <small>&lt;&lt;</small> Previous example
-    </button>
-  </a>
-  {{ end }}
+    {{ with $orderedPages.Prev . }}
+    <a href="{{ .Permalink }}">
+      <button type="button">
+        <small>&lt;&lt;</small> Previous
+      </button>
+    </a>
+    {{ end }}
 
-  {{ with $orderedPages.Next . }}
-  <a href="{{ .Permalink }}">
-    <button type="button" class="blue">
-      Next example <small>&gt;&gt;</small>
-    </button>
-  </a>
-  {{ end }}
+    {{ with $orderedPages.Next . }}
+    <a href="{{ .CurrentSection.Permalink }}">
+      <button type="button">
+        Index
+      </button>
+    </a>
+    {{ end }}
 
+    {{ with $orderedPages.Next . }}
+    <a href="{{ .Permalink }}">
+      <button type="button">
+        Next <small>&gt;&gt;</small>
+      </button>
+    </a>
+    {{ end }}
 </div>
 
 {{ end }}
