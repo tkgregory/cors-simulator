@@ -1,0 +1,64 @@
+{{ define "main" }}
+
+<h2>Example {{ .Weight }}</h2>
+{{ .Content }}
+
+{{ with .Resources.GetMatch "script.js" }}
+<script> {{ .Content | safeJS }} </script>
+{{ end }}
+
+<div class="dynamic" id="dynamic">
+    <button type="button" id="try-it-out" class="big centred enabled">
+        Try it out!
+    </button>
+
+    {{ with .Resources.GetMatch "dynamic.html" }}
+    {{ .Content | safeHTML }}
+    {{ end }}
+</div>
+
+<div class="info-box hidden" id="response-data">
+    <div id="error" class="hidden">
+        <div class="info-title">Error</div>
+    </div>
+    <div id="body" class="hidden">
+        <div class="info-title">Body</div>
+    </div>
+    <div id="origins" class="hidden">
+        <div class="info-title">Origins</div>
+    </div>
+    <div id="headers" class="hidden">
+        <div class="info-title">Headers</div>
+    </div>
+</div>
+
+<div id="navigation">
+    {{ $pages := where site.RegularPages "Section" .Section }}
+    {{ $orderedPages := $pages.ByWeight.Reverse }}
+
+    {{ with $orderedPages.Prev . }}
+    <a href="{{ .Permalink }}">
+        <button type="button">
+            <small>&lt;&lt;</small> Previous
+        </button>
+    </a>
+    {{ end }}
+
+    {{ with $orderedPages.Next . }}
+    <a href="{{ .CurrentSection.Permalink }}">
+        <button type="button">
+            Index
+        </button>
+    </a>
+    {{ end }}
+
+    {{ with $orderedPages.Next . }}
+    <a href="{{ .Permalink }}">
+        <button type="button">
+            Next <small>&gt;&gt;</small>
+        </button>
+    </a>
+    {{ end }}
+</div>
+
+{{ end }}
