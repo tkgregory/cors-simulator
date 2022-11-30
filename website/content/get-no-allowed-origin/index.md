@@ -1,10 +1,10 @@
 ---
-title: "Cross-origin GET request from JavaScript code (no CORS)"
+title: "Cross-origin GET request with missing Access-Control-Allow-Origin header"
 weight: 4
 ---
 
-# Cross-origin GET request from JavaScript code (no CORS)
+# Cross-origin GET request with missing Access-Control-Allow-Origin header
 
 JavaScript code can make a cross-origin GET request.
 
-Unless the response includes the correct CORS headers, the browser discards it.
+The response must include an `Access-Control-Allow-Origin` header, otherwise the browser discards it.

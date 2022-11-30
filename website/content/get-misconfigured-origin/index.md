@@ -1,10 +1,10 @@
 ---
-title: "Cross-origin GET request from JavaScript code (miconfigured CORS)"
-weight: 4
+title: "Cross-origin GET request with miconfigured Access-Control-Allow-Origin header"
+weight: 5
 ---
 
-# Cross-origin GET request from JavaScript code (miconfigured CORS)
+# Cross-origin GET request with miconfigured Access-Control-Allow-Origin header
 
 JavaScript code can make a cross-origin GET request.
 
-Unless the response includes the correct CORS headers, the browser discards it.
+The response must include a `Access-Control-Allow-Origin` header containing the request origin, otherwise the browser discards it.

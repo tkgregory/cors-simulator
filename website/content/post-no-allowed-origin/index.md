@@ -1,10 +1,10 @@
 ---
-title: "Cross-origin POST request from JavaScript code (no CORS)"
-weight: 6
+title: "Cross-origin POST request with missing Access-Control-Allow-Origin header"
+weight: 7
 ---
 
-# Cross-origin POST request from JavaScript code (no CORS)
+# Cross-origin POST request with missing Access-Control-Allow-Origin header
 
 JavaScript code can make a cross-origin POST request.
 
-Unless the response includes the correct CORS headers, the browser discards it.
+The response to the pre-flight request must include an `Access-Control-Allow-Origin` header, otherwise the browser won't make the main request.
