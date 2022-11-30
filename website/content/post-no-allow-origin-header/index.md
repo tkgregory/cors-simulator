@@ -1,6 +1,6 @@
 ---
 title: "Cross-origin POST request with missing Access-Control-Allow-Origin header"
-weight: 7
+weight: 8
 ---
 
 # Cross-origin POST request with missing Access-Control-Allow-Origin header

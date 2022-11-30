@@ -22,11 +22,11 @@ custom:
     certificateName: 'assets.${param:domainName}'
     hostedZoneIds: Z06426551JRM5G4EGPV2L
 functions:
-  get-no-allowed-origin:
-    handler: functions/get/no-allowed-origin.handler
+  get-no-allow-origin-header:
+    handler: functions/get/no-allow-origin-header.handler
     events:
       - httpApi:
-          path: /get-no-allowed-origin
+          path: /get-no-allow-origin-header
           method: get
   get-success:
     handler: functions/get/success.handler
@@ -40,16 +40,22 @@ functions:
       - httpApi:
           path: /get-misconfigured-origin
           method: get               
-  post-no-origin:
-    handler: functions/post/no-allowed-origin.handler
+  post-no-allow-origin-header:
+    handler: functions/post/no-allow-origin-header.handler
     events:
       - httpApi:
-          path: /post-no-allowed-origin
+          path: /post-no-allow-origin-header
           method: post
       - httpApi:
-          path: /post-no-allowed-origin
+          path: /post-no-allow-origin-header
           method: options
-  post-with-cors:
+  post-no-options-api:
+    handler: functions/post/no-allow-origin-header.handler
+    events:
+      - httpApi:
+          path: /post-no-options-api
+          method: post        
+  post-success:
     handler: functions/post/success.handler
     events:
       - httpApi:

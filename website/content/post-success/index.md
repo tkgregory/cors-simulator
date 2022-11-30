@@ -1,6 +1,6 @@
 ---
 title: "Cross-origin POST request with correct CORS setup"
-weight: 8
+weight: 9
 ---
 
 # Cross-origin POST request with correct CORS setup
