@@ -19,11 +19,19 @@ body {
     border-right: medium solid rgb(80, 80, 80);
 }
 
+a:link {
+    color: white;
+}
+
 a:visited {
-    color: inherit;
+    color: white;
 }
 
 a:hover {
+    color: rgb(220, 220, 220);
+}
+
+a:active {
     color: rgb(220, 220, 220);
 }
 
