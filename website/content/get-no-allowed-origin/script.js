@@ -1,10 +1,7 @@
 registerDynamicContent(function () {
-    const requestURL = "https://api.cors-examples.tomgregory.com/post-with-cors";
+    const requestURL = "https://api.cors-examples.tomgregory.com/get-no-allowed-origin";
 
-    fetch(requestURL, {
-        method: 'POST',
-        headers: {"Content-type": "application/json"}
-    })
+    fetch(requestURL)
         .then((response) => {
             udpateForSuccessWithResponse(new URL(requestURL).origin, response);
         })

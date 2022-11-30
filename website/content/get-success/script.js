@@ -1,5 +1,5 @@
 registerDynamicContent(function () {
-    const requestURL = "https://api.cors-examples.tomgregory.com/get-without-cors";
+    const requestURL = "https://api.cors-examples.tomgregory.com/get-success";
 
     fetch(requestURL)
         .then((response) => {

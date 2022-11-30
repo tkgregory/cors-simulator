@@ -22,41 +22,41 @@ custom:
     certificateName: 'assets.${param:domainName}'
     hostedZoneIds: Z06426551JRM5G4EGPV2L
 functions:
-  get-without-cors:
-    handler: functions/without-cors/get.handler
+  get-no-allowed-origin:
+    handler: functions/get/no-allowed-origin.handler
     events:
       - httpApi:
-          path: /get-without-cors
+          path: /get-no-allowed-origin
           method: get
-  get-with-cors:
-    handler: functions/with-cors/get.handler
+  get-success:
+    handler: functions/get/success.handler
     events:
       - httpApi:
-          path: /get-with-cors
+          path: /get-success
           method: get       
   get-misconfigured-origin:
-    handler: functions/with-cors/get-misconfigured-origin.handler
+    handler: functions/get/misconfigured-origin.handler
     events:
       - httpApi:
           path: /get-misconfigured-origin
           method: get               
-  post-without-cors:
-    handler: functions/without-cors/post.handler
+  post-no-origin:
+    handler: functions/post/no-allowed-origin.handler
     events:
       - httpApi:
-          path: /post-without-cors
+          path: /post-no-allowed-origin
           method: post
       - httpApi:
-          path: /post-without-cors
+          path: /post-no-allowed-origin
           method: options
   post-with-cors:
-    handler: functions/with-cors/post.handler
+    handler: functions/post/success.handler
     events:
       - httpApi:
-          path: /post-with-cors
+          path: /post-success
           method: post          
       - httpApi:
-          path: /post-with-cors
+          path: /post-success
           method: options
 resources:
   Resources:
