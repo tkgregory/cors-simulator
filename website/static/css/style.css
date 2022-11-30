@@ -111,16 +111,20 @@ button {
     background-color: #1100c9; 
 }
 
-button.red {
-    background-color: #b02222;
-}
-
 button.disabled {
     cursor: auto;
 }
 
 button.disabled:hover {
     background-color: #4CAF50;
+}
+
+button.red {
+    background-color: #b02222;
+}
+
+button.red:hover {
+    background-color: #b02222;
 }
 
 button:hover {

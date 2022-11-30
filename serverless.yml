@@ -23,23 +23,35 @@ custom:
     hostedZoneIds: Z06426551JRM5G4EGPV2L
 functions:
   get-without-cors:
-    handler: without-cors/get.handler
+    handler: functions/without-cors/get.handler
     events:
       - httpApi:
           path: /get-without-cors
           method: get
   get-with-cors:
-    handler: with-cors/get.handler
+    handler: functions/with-cors/get.handler
     events:
       - httpApi:
           path: /get-with-cors
           method: get          
   post-without-cors:
-    handler: without-cors/post.handler
+    handler: functions/without-cors/post.handler
     events:
       - httpApi:
           path: /post-without-cors
           method: post
+      - httpApi:
+          path: /post-without-cors
+          method: options
+  post-with-cors:
+    handler: functions/with-cors/post.handler
+    events:
+      - httpApi:
+          path: /post-with-cors
+          method: post          
+      - httpApi:
+          path: /post-with-cors
+          method: options
 resources:
   Resources:
     Bucket:

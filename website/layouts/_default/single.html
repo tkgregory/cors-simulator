@@ -44,13 +44,11 @@
     </a>
     {{ end }}
 
-    {{ with $orderedPages.Next . }}
     <a href="{{ .CurrentSection.Permalink }}">
         <button type="button">
             Index
         </button>
     </a>
-    {{ end }}
 
     {{ with $orderedPages.Next . }}
     <a href="{{ .Permalink }}">
