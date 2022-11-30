@@ -33,7 +33,13 @@ functions:
     events:
       - httpApi:
           path: /get-with-cors
-          method: get          
+          method: get       
+  get-misconfigured-origin:
+    handler: functions/with-cors/get-misconfigured-origin.handler
+    events:
+      - httpApi:
+          path: /get-misconfigured-origin
+          method: get               
   post-without-cors:
     handler: functions/without-cors/post.handler
     events:
