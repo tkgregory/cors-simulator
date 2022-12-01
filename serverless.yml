@@ -1,17 +1,18 @@
-service: server
+service: cors-simulator
 frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs12.x
   region: eu-west-1
-  stackName: cors-simulator
-  httpApi:
-    name: cors-simulator
 params:
   default:
+    domainName: cors-simulator-${sls:stage}.tomgregory.com
+    assetsS3BucketName: cors-simulator-${sls:stage}-assets
+    websiteS3BucketName: cors-simulator-${sls:stage}-website
+  prod:
+    domainName: cors-simulator.tomgregory.com
     assetsS3BucketName: cors-simulator-assets
     websiteS3BucketName: cors-simulator-website
-    domainName: cors-simulator.tomgregory.com
 plugins:
   - serverless-s3-sync
   - serverless-certificate-creator
@@ -190,7 +191,7 @@ resources:
       Type: AWS::CloudFront::OriginAccessControl
       Properties:
         OriginAccessControlConfig:
-          Name: OriginAccessControl
+          Name: !Sub '${AWS::StackName}-OriginAccessControl'
           OriginAccessControlOriginType: s3
           SigningBehavior: always
           SigningProtocol: sigv4
