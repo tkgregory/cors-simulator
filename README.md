@@ -1,3 +1,5 @@
+[![CORS Simulator](https://github.com/tkgregory/cors-simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/tkgregory/cors-simulator/actions/workflows/ci.yml)
+
 # CORS Examples
 
 A series of examples to demonstrate important CORS concepts.
