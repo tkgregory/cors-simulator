@@ -1,5 +1,5 @@
 registerDynamicContent(function () {
-    const requestURL = "https://api.cors-examples.tomgregory.com/get-misconfigured-origin";
+    const requestURL = "https://api.cors-simulator.tomgregory.com/get-misconfigured-origin";
 
     fetch(requestURL)
         .then((response) => {

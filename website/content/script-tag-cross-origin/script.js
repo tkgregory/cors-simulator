@@ -1,5 +1,5 @@
 registerDynamicContent(function () {
-    const javscriptURL = "https://assets.cors-examples.tomgregory.com/time.js";
+    const javscriptURL = "https://assets.cors-simulator.tomgregory.com/time.js";
     const javscript = $("<script>", {
         src: javscriptURL,
         type: "text/javascript",

@@ -1,5 +1,5 @@
 registerDynamicContent(function () {
-    const requestURL = "https://api.cors-examples.tomgregory.com/get-no-allow-origin-header";
+    const requestURL = "https://api.cors-simulator.tomgregory.com/get-no-allow-origin-header";
 
     fetch(requestURL)
         .then((response) => {
