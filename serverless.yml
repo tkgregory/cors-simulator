@@ -5,6 +5,8 @@ provider:
   runtime: nodejs12.x
   region: eu-west-1
   stackName: cors-simulator
+  httpApi:
+    name: cors-simulator
 params:
   default:
     assetsS3BucketName: cors-simulator-assets
