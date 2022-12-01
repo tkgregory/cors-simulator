@@ -32,3 +32,7 @@ jobs:
       uses: serverless/github-action@v3.1
       with:
         args: deploy --stage prod  
+    - name: Deploy website
+      uses: serverless/github-action@v3.1
+      with:
+        args: s3sync --stage prod    
