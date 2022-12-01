@@ -4,11 +4,12 @@ provider:
   name: aws
   runtime: nodejs12.x
   region: eu-west-1
+  stackName: cors-simulator
 params:
   default:
-    assetsS3BucketName: tomgregory-cors
-    websiteS3BucketName: cors-examples-website
-    domainName: cors-examples.tomgregory.com
+    assetsS3BucketName: cors-simulator-assets
+    websiteS3BucketName: cors-simulator-website
+    domainName: cors-simulator.tomgregory.com
 plugins:
   - serverless-s3-sync
   - serverless-certificate-creator
@@ -65,6 +66,7 @@ functions:
           path: /post-success
           method: options
 resources:
+  Description: Infrastructure for Interactive CORS Simulator
   Resources:
     Bucket:
       Type: AWS::S3::Bucket
@@ -114,9 +116,10 @@ resources:
       Properties:
         DomainName: 'api.${param:domainName}'
         DomainNameConfigurations:
-          - CertificateArn: !Ref CORSExamplesCertificate
+          - CertificateArn: !Ref CORSSimulatorCertificate
     ApiMapping:
       Type: AWS::ApiGatewayV2::ApiMapping
+      DependsOn: ApiDomainName
       Properties:
         DomainName: 'api.${param:domainName}'
         ApiId: !Ref HttpApi
@@ -185,7 +188,7 @@ resources:
       Type: AWS::CloudFront::OriginAccessControl
       Properties:
         OriginAccessControlConfig:
-          Name: ExampleOAC
+          Name: OriginAccessControl
           OriginAccessControlOriginType: s3
           SigningBehavior: always
           SigningProtocol: sigv4
@@ -207,7 +210,7 @@ resources:
         AliasTarget:
           DNSName: !GetAtt WebsiteCloudFrontDistribution.DomainName
           HostedZoneId: Z2FDTNDATAQYW2 # value as described in AWS docs
-    CORSExamplesCertificate:
+    CORSSimulatorCertificate:
       Type: AWS::CertificateManager::Certificate
       Properties:
         DomainName: ${param:domainName}
