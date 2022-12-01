@@ -18,3 +18,8 @@ jobs:
         hugo-version: '0.107.0'
     - name: Build website
       run: hugo -s website
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: arn:aws:iam::299404798587:role/tomgregory-site-CORSSimulatorGitHubRole-KEZEJM5EIFFY
+        aws-region: eu-west-1      
