@@ -16,6 +16,10 @@ jobs:
       uses: peaceiris/actions-hugo@v2
       with:
         hugo-version: '0.107.0'
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18        
     - name: Build website
       run: hugo -s website
     - name: Configure AWS credentials
@@ -23,3 +27,8 @@ jobs:
       with:
         role-to-assume: arn:aws:iam::299404798587:role/tomgregory-site-CORSSimulatorGitHubRole-KEZEJM5EIFFY
         aws-region: eu-west-1      
+    - run: npm ci
+    - name: Deploy infrastructure
+      uses: serverless/github-action@v3.1
+      with:
+        args: deploy --stage prod  
