@@ -26,25 +26,25 @@ custom:
     certificateName: 'assets.${param:domainName}'
     hostedZoneIds: Z06426551JRM5G4EGPV2L
 functions:
-  get-no-allow-origin-header:
+  getNoAllowOriginHeader:
     handler: functions/get/no-allow-origin-header.handler
     events:
       - httpApi:
           path: /get-no-allow-origin-header
           method: get
-  get-success:
+  getSuccess:
     handler: functions/get/success.handler
     events:
       - httpApi:
           path: /get-success
           method: get       
-  get-misconfigured-origin:
+  getMisconfiguredOrigin:
     handler: functions/get/misconfigured-origin.handler
     events:
       - httpApi:
           path: /get-misconfigured-origin
           method: get               
-  post-no-allow-origin-header:
+  postNoAllowOriginHeader:
     handler: functions/post/no-allow-origin-header.handler
     events:
       - httpApi:
@@ -53,13 +53,13 @@ functions:
       - httpApi:
           path: /post-no-allow-origin-header
           method: options
-  post-no-options-api:
+  postNoOptionsApi:
     handler: functions/post/no-allow-origin-header.handler
     events:
       - httpApi:
           path: /post-no-options-api
           method: post        
-  post-success:
+  postSuccess:
     handler: functions/post/success.handler
     events:
       - httpApi:
