@@ -103,14 +103,6 @@ button {
 }
 
 
-#navigation button {
-    background-color: #1500ff; 
-}
-
-#navigation button:hover {
-    background-color: #1100c9; 
-}
-
 button.disabled {
     cursor: auto;
 }
@@ -178,8 +170,20 @@ img {
     border: medium solid rgb(80, 80, 80);
 }
 
-#navigation {
+.navigation {
     text-align: center;
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
+    margin-top: 25px;
+    font-size: 22px;
+}
+
+.navigation-previous {
+    text-align: right;
+}
+
+.navigation-next {
+    text-align: left;
 }
 
 ul {
