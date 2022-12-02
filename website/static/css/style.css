@@ -159,12 +159,19 @@ p {
 }
 
 h1 {
-    font-size: 26px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+article h1 {
+    text-align: center;
 }
 
 h2 {
     font-size: 22px;
     font-weight: normal;
+    text-transform: uppercase;
+    color: rgb(32, 183, 105);
 }
 
 img {
@@ -173,4 +180,35 @@ img {
 
 #navigation {
     text-align: center;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul a {
+    padding: 8px;
+    margin: 0;
+    margin-left: 8px;
+    text-decoration: none;
+    display: block;
+    border-top: .5px solid rgb(207, 207, 207);
+}
+
+ul a:hover {
+    padding-left: 16px;
+    color: inherit;
+    transition: 250ms;
+    background-color: rgb(100, 100, 100);
+    cursor: pointer;
+}
+
+.index-section {
+    border-top: 1.5px solid rgb(207, 207, 207);
 }
