@@ -28,7 +28,7 @@ jobs:
         aws-region: eu-west-1      
     - run: npm ci
     - name: Build website dev
-      run: hugo -s website --baseURL "http://cors-simulator-dev.tomgregory.com/"    
+      run: hugo -s website --environment development
     - name: Deploy infrastructure to dev
       uses: serverless/github-action@v3.1
       with:

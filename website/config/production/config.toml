@@ -1,0 +1,4 @@
+baseURL = 'https://cors-simulator.tomgregory.com/'
+[params]
+    apiBaseURL = "https://api.cors-simulator.tomgregory.com/"
+    assetsBaseURL = "https://assets.cors-simulator.tomgregory.com/"
