@@ -79,11 +79,16 @@ a:hover {
 }
 
 code {
-    background-color: rgb(80, 80, 80);
+    background-color: rgb(50, 50, 50);
 }
 
 .info-box code {
     background-color: inherit;
+}
+
+div.highlight pre {
+    padding: 8px;
+    border-radius: 6px;
 }
 
 button {
@@ -125,7 +130,7 @@ button.big {
     font-size: 36px;
 }
 
-.highlight {
+.box {
     background-color: rgb(80, 80, 80);
     display: inline-block;
     padding: 15px 32px;
@@ -135,13 +140,6 @@ button.big {
     font-weight: 800;
     font-size: 20px;
     text-transform: uppercase;
-}
-
-#response.highlight {
-    text-transform: none;
-    text-align: left;
-    font-weight: 400;
-    font-family: Courier, sans-serif;
 }
 
 p {
@@ -184,17 +182,25 @@ img {
     text-align: left;
 }
 
-ul {
+[class^="navigation-"] {
+    margin: 8px;
+}
+
+.index-section {
+    border-top: 1.5px solid rgb(207, 207, 207);
+}
+
+.index-section ul {
     padding: 0;
 }
 
-li {
+.index-section li {
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-ul a {
+.index-section ul a {
     padding: 8px;
     margin: 0;
     margin-left: 8px;
@@ -203,16 +209,12 @@ ul a {
     border-top: .5px solid rgb(207, 207, 207);
 }
 
-ul a:hover {
+.index-section ul a:hover {
     padding-left: 16px;
     color: inherit;
     transition: 250ms;
     background-color: rgb(100, 100, 100);
     cursor: pointer;
-}
-
-.index-section {
-    border-top: 1.5px solid rgb(207, 207, 207);
 }
 
 .website-info {
@@ -228,4 +230,8 @@ ul a:hover {
 .website-info a:hover {
     color: white;
     transition: 250ms;
+}
+
+#response-body {
+    overflow: hidden;
 }

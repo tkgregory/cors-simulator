@@ -25,7 +25,7 @@ function updateForFailure(requestOrigin, error) {
 }
 
 function addResponseBody(json) {
-    $("#body").append("<div>" + json.message + "</div>").show();
+    $("#response-body").append("<pre>" + json.message + "</pre>").show();
 }
 
 function addHeaderData(headers) {
