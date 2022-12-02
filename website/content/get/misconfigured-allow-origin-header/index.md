@@ -1,9 +1,8 @@
 ---
-title: "Cross-origin GET request with miconfigured Access-Control-Allow-Origin header"
-weight: 5
+title: "Cross-origin GET request with misconfigured Access-Control-Allow-Origin header"
+shortTitle: "Misconfigured Access-Control-Allow-Origin header"
+weight: 3
 ---
-
-# Cross-origin GET request with miconfigured Access-Control-Allow-Origin header
 
 JavaScript code can make a cross-origin GET request.
 

@@ -6,10 +6,19 @@
         </header>
         {{.Content}}
     </article>
-    {{ range $index, $page := .Pages }}
-    <div>
-        <a href="{{.Permalink}}">{{ add $index 1 }} {{ $page.Title }}</a>
-    </div>
+    {{ range $section := .Site.Sections }}
+    <h2>{{ $section.Title }}</h2>
+    <ul>
+        {{ range $index, $page := (where .Site.Pages "Section" $section.Section) }}
+        {{ if eq $page.BundleType "leaf" }}
+        <li>
+            <a href="{{.Permalink}}">
+                {{ $page.Params.ShortTitle }}
+            </a>
+        </li>
+        {{ end }}
+        {{ end }}
+    </ul>
     {{ end }}
 </main>
 {{ end }}
