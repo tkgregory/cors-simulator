@@ -36,13 +36,12 @@ a:hover {
     text-decoration: none;
 }
   
-
 .info-box {
     display: block;
     text-align: left;
     background-color: rgb(220, 220, 220);
     padding: 10px;
-    margin: 10px;
+    margin-top: 15px;
     color: black;
     border-radius: 8px;
 }
@@ -53,9 +52,7 @@ a:hover {
 
 .dynamic {
     border: medium dotted #4CAF50;
-    min-height: 300px;
-    margin: 10px;
-    margin-top: 50px;
+    margin-top: 15px;
     padding: 10px;
     position: relative;
     text-align: center;
@@ -95,15 +92,15 @@ button {
     background-color: #4CAF50;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 8px 16px;
+    padding: 12px 26px;
     text-align: center;
-    font-size: 18px;
+    font-size: 24px;
     border-radius: 8px;
     box-shadow: 1px 1px 2px #545454;
     z-index: 1;
     cursor: pointer;
 }
-
 
 button.disabled {
     cursor: auto;
@@ -124,22 +121,6 @@ button.red:hover {
 button:hover {
     background-color: #38843a;
     transition: 250ms;
-}
-
-button.big {
-    font-size: 36px;
-}
-
-.box {
-    background-color: rgb(80, 80, 80);
-    display: inline-block;
-    padding: 15px 32px;
-    border-radius: 8px; 
-
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
-    font-size: 20px;
-    text-transform: uppercase;
 }
 
 p {
