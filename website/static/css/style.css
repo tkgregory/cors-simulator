@@ -191,7 +191,7 @@ img {
 }
 
 .index-section ul a:hover {
-    padding-left: 16px;
+    padding-left: 12px;
     color: inherit;
     transition: 250ms;
     background-color: rgb(100, 100, 100);
