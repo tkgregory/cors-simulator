@@ -9,10 +9,12 @@ params:
     domainName: cors-simulator-${sls:stage}.tomgregory.com
     assetsS3BucketName: cors-simulator-${sls:stage}-assets
     websiteS3BucketName: cors-simulator-${sls:stage}-website
+    apiAllowedOrigins: https://${param:domainName}
   prod:
     domainName: cors-simulator.tomgregory.com
     assetsS3BucketName: cors-simulator-assets
     websiteS3BucketName: cors-simulator-website
+    apiAllowedOrigins: https://${param:domainName}
 plugins:
   - serverless-s3-sync
   - serverless-certificate-creator
@@ -59,6 +61,28 @@ functions:
       - httpApi:
           path: /post-no-options-api
           method: post        
+  postSetCookie:
+    handler: functions/post/set-cookie.handler
+    events:
+      - httpApi:
+          path: /post-set-cookie
+          method: post        
+      - httpApi:
+          path: /post-set-cookie
+          method: options                
+    environment:
+      ALLOWED_ORIGINS: ${param:apiAllowedOrigins}
+  postRequiresCookie:
+    handler: functions/post/requires-cookie.handler
+    events:
+      - httpApi:
+          path: /post-requires-cookie
+          method: post          
+      - httpApi:
+          path: /post-requires-cookie
+          method: options
+    environment:
+      ALLOWED_ORIGINS: ${param:apiAllowedOrigins}          
   postSuccess:
     handler: functions/post/success.handler
     events:
