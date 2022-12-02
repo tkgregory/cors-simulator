@@ -29,10 +29,7 @@ a:visited {
 
 a:hover {
     color: rgb(220, 220, 220);
-}
-
-a:active {
-    color: rgb(220, 220, 220);
+    transition: 250ms;
 }
 
 #navigation a {
@@ -121,6 +118,7 @@ button.red:hover {
 
 button:hover {
     background-color: #38843a;
+    transition: 250ms;
 }
 
 button.big {
@@ -215,4 +213,19 @@ ul a:hover {
 
 .index-section {
     border-top: 1.5px solid rgb(207, 207, 207);
+}
+
+.website-info {
+    text-align: center;
+    margin-top: 50px;
+    color: rgb(80, 80, 80);
+}
+
+.website-info a {
+    color: rgb(80, 80, 80);
+}
+
+.website-info a:hover {
+    color: white;
+    transition: 250ms;
 }
