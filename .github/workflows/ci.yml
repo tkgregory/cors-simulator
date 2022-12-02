@@ -40,9 +40,9 @@ jobs:
       uses: serverless/github-action@v3.1
       with:
         args: deploy --stage prod  
-      if: startsWith(github.ref, 'refs/tags/v'))
+      if: startsWith(github.ref, 'refs/tags/v')
     - name: Deploy website to prod
       uses: serverless/github-action@v3.1
       with:
         args: s3sync --stage prod
-      if: startsWith(github.ref, 'refs/tags/v'))
+      if: startsWith(github.ref, 'refs/tags/v')
