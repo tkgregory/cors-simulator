@@ -6,19 +6,23 @@
         </header>
         {{.Content}}
     </article>
-    {{ range $section := .Site.Sections }}
-    <h2>{{ $section.Title }}</h2>
-    <ul>
-        {{ range $index, $page := (where .Site.Pages "Section" $section.Section) }}
-        {{ if eq $page.BundleType "leaf" }}
-        <li>
-            <a href="{{.Permalink}}">
-                {{ $page.Params.ShortTitle }}
-            </a>
-        </li>
+    <div class="index">
+        {{ range $section := .Site.Sections }}
+        <div class="index-section">
+            <h2>{{ $section.Title }}</h2>
+            <ul>
+                {{ range $index, $page := (where .Site.Pages "Section" $section.Section) }}
+                {{ if eq $page.BundleType "leaf" }}
+                <li>
+                    <a href="{{.Permalink}}">
+                        {{ $page.Params.ShortTitle }}
+                    </a>
+                </li>
+                {{ end }}
+                {{ end }}
+            </ul>
+        </div>
         {{ end }}
-        {{ end }}
-    </ul>
-    {{ end }}
+    </div>
 </main>
 {{ end }}
