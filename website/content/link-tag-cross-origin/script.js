@@ -1,5 +1,5 @@
 registerDynamicContent(function () {
-    const styleSheetURL = "https://assets.cors-simulator.tomgregory.com/funky-text.css";
+    const styleSheetURL = assetsBaseURL + "funky-text.css";
     const stylesheet = $("<link>", {
         rel: "stylesheet",
         type: "text/css",

@@ -4,7 +4,11 @@
 {{ .Content }}
 
 {{ with .Resources.GetMatch "script.js" }}
-<script> {{ .Content | safeJS }} </script>
+<script> 
+    const apiBaseURL = {{ $.Site.Params.apiBaseURL }}
+    const assetsBaseURL = {{ $.Site.Params.assetsBaseURL }}
+    {{ .Content | safeJS }} 
+</script>
 {{ end }}
 
 <div class="dynamic" id="dynamic">

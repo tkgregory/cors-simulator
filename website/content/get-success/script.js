@@ -1,5 +1,5 @@
 registerDynamicContent(function () {
-    const requestURL = "https://api.cors-simulator.tomgregory.com/get-success";
+    const requestURL = apiBaseURL + "/get-success";
 
     fetch(requestURL)
         .then((response) => {
