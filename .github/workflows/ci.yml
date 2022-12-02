@@ -27,24 +27,24 @@ jobs:
         role-to-assume: arn:aws:iam::299404798587:role/tomgregory-site-CORSSimulatorGitHubRole-KEZEJM5EIFFY
         aws-region: eu-west-1      
     - run: npm ci
+    - name: Build website dev
+      run: hugo -s website --baseURL "http://cors-simulator-dev.tomgregory.com/"    
     - name: Deploy infrastructure to dev
       uses: serverless/github-action@v3.1
       with:
         args: deploy --stage dev  
-    - name: Build website dev
-      run: hugo -s website --baseURL "http://cors-simulator-dev.tomgregory.com/"
     - name: Deploy website to dev
       uses: serverless/github-action@v3.1
       with:
         args: s3sync --stage dev        
+    - name: Build website prod
+      run: hugo -s website
+      if: startsWith(github.ref, 'refs/tags/v')            
     - name: Deploy infrastructure to prod
       uses: serverless/github-action@v3.1
       with:
         args: deploy --stage prod  
-      if: startsWith(github.ref, 'refs/tags/v')
-    - name: Build website prod
-      run: hugo -s website
-      if: startsWith(github.ref, 'refs/tags/v')          
+      if: startsWith(github.ref, 'refs/tags/v')      
     - name: Deploy website to prod
       uses: serverless/github-action@v3.1
       with:
