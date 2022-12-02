@@ -1,9 +1,8 @@
 ---
 title: "Cross-origin POST request with missing Options API"
-weight: 7
+shortTitle: "Missing Options API"
+weight: 2
 ---
-
-# Cross-origin POST request with missing Options API
 
 JavaScript code can make a cross-origin POST request.
 

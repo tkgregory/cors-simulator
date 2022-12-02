@@ -1,9 +1,8 @@
 ---
 title: "Cross-origin POST request with missing Access-Control-Allow-Origin header"
-weight: 8
+shortTitle: "Missing Access-Control-Allow-Origin header"
+weight: 3
 ---
-
-# Cross-origin POST request with missing Access-Control-Allow-Origin header
 
 JavaScript code can make a cross-origin POST request.
 

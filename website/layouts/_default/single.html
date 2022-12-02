@@ -1,6 +1,8 @@
 {{ define "main" }}
 
-<h2>Example {{ .Weight }}</h2>
+{{$section_heading := .Site.GetPage "section" .Section }}
+<h2>{{ $section_heading.Title }}: Example {{ .Weight }}</h2>
+<h1>{{ .Title }}</h1>
 {{ .Content }}
 
 {{ with .Resources.GetMatch "script.js" }}
@@ -48,7 +50,7 @@
     </a>
     {{ end }}
 
-    <a href="{{ .CurrentSection.Permalink }}">
+    <a href="{{ .Site.BaseURL }}">
         <button type="button">
             Index
         </button>

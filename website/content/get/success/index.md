@@ -1,9 +1,8 @@
 ---
 title: "Cross-origin GET request with correct CORS setup"
-weight: 6
+shortTitle: "Correct CORS setup"
+weight: 1
 ---
-
-# Cross-origin GET request with correct CORS setup
 
 JavaScript code can make a cross-origin GET request.
 
