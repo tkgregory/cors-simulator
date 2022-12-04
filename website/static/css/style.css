@@ -148,9 +148,10 @@ img {
 }
 
 .navigation {
-    text-align: center;
-    display: grid;
-    grid-template-columns: 4fr 1fr 4fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
     margin-top: 25px;
     font-size: 22px;
 }
