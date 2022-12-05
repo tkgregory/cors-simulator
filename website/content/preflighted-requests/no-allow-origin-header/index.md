@@ -1,7 +1,7 @@
 ---
 title: "PUT request with missing Access-Control-Allow-Origin header"
 shortTitle: "Missing Access-Control-Allow-Origin header"
-weight: 5
+weight: 7
 ---
 
 JavaScript code can make a Cross-origin PUT request.
