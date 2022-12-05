@@ -5,7 +5,7 @@ registerDynamicContent(function () {
         method: 'PUT',
     })
         .then((response) => {
-            udpateForSuccessWithResponse(new URL(requestURL).origin, response);
+            updateForSuccessWithResponse(new URL(requestURL).origin, response);
         })
         .catch((error) => {
             updateForFailure(new URL(requestURL).origin, error);
