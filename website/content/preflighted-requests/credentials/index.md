@@ -1,7 +1,7 @@
 ---
 title: "PUT request including credentials"
 shortTitle: "Include credentials"
-weight: 2
+weight: 4
 ---
 
 A cross-origin request can be configured to include credentials.

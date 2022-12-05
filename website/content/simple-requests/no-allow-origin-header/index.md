@@ -1,7 +1,7 @@
 ---
 title: "Cross-origin GET request with missing Access-Control-Allow-Origin header"
 shortTitle: "Missing Access-Control-Allow-Origin header"
-weight: 2
+weight: 3
 ---
 
 JavaScript code can make a cross-origin GET request.
