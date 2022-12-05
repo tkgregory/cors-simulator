@@ -1,5 +1,5 @@
 registerDynamicContent(function () {
-    const requestURL = apiBaseURL + "/get-success";
+    const requestURL = apiBaseURL + "get-success";
 
     fetch(requestURL)
         .then((response) => {

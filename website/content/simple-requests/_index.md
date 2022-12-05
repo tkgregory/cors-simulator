@@ -1,5 +1,5 @@
 ---
 title: "Simple JavaScript requests"
-summary: "Cross-domain JavaScript requests not requiring a pre-flight request."
+summary: "CORS cross-domain JavaScript requests, not requiring a pre-flight request."
 weight: 2
 ---

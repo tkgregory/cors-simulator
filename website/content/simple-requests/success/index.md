@@ -1,9 +1,15 @@
 ---
-title: "Cross-origin GET request with correct CORS setup"
+title: "GET request with correct CORS setup"
 shortTitle: "Correct CORS setup"
 weight: 1
 ---
 
-JavaScript code can make a cross-origin GET request.
+### Summary
 
-The response includes the correctly configured `Access-Control-Allow-Origin` CORS header, so the browser accepts it.
+JavaScript code can make a cross-origin `GET` request.
+The response must include the correctly configured `Access-Control-Allow-Origin` header.
+
+### Instructions
+
+1. Hit green button below and see `best-header-ever` header value
+1. Observe difference between source and request origins, confirming cross-origin request

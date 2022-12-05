@@ -1,5 +1,5 @@
 ---
 title: "HTML tag requests"
-summary: "Cross-domain requests triggered by an HTML tag."
+summary: "Non-CORS cross-domain requests triggered by HTML tags."
 weight: 1
 ---

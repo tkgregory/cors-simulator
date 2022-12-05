@@ -3,7 +3,9 @@ registerDynamicContent(function () {
     const expectedHeader = "Best-Header-Ever";
 
     fetch(requestURL.toString())
-        .then(response => console.log(response.headers.get("Best-Header-Ever")))
+        .then((response) => {
+            updateForSuccessWithResponse(new URL(requestURL).origin, response);
+        })
         .catch((error) => {
             updateForFailure(requestURL.origin, error);
         });
