@@ -8,7 +8,8 @@ module.exports.handler = async (event) => {
       statusCode: 200,
       headers: {
         "Access-Control-Allow-Origin": allowedOrigins,
-        "Access-Control-Allow-Methods": "PUT"
+        "Access-Control-Allow-Methods": "PUT",
+        "Access-Control-Max-Age": "60"
       }
     };
   }

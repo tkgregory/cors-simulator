@@ -114,6 +114,15 @@ functions:
       - httpApi:
           path: /put-success
           method: options
+  putMaxAge:
+    handler: functions/put/max-age.handler
+    events:
+      - httpApi:
+          path: /put-max-age
+          method: put          
+      - httpApi:
+          path: /put-max-age
+          method: options          
   putExposeHeader:
     handler: functions/put/expose-header.handler
     events:

@@ -1,7 +1,7 @@
 ---
 title: "PUT request with missing Options API"
 shortTitle: "Missing Options API"
-weight: 4
+weight: 6
 ---
 
 JavaScript code can make a Cross-origin PUT request.
