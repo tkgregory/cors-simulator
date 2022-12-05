@@ -1,12 +1,13 @@
 ---
-title: "Cross-origin GET request including credentials"
+title: "GET request including credentials"
 shortTitle: "Include credentials"
 weight: 3
 ---
 
+### Summary
 A cross-origin request can be configured to include credentials.
 
-Add `credentials: 'include'` to the `fetch` call, whenever you want to *send* or *receive* cookies.
+Add `credentials: 'include'` to the JavaScript `fetch` call, to *send* or *receive* cookies.
 
 ```javascript
 fetch(requestURL, {
@@ -15,4 +16,9 @@ fetch(requestURL, {
 })
 ```
 
-The response to the main request must include the `Access-Control-Allow-Credentials` header with a value of `true`.
+The response must include the `Access-Control-Allow-Credentials` header with a value of `true`.
+
+### Instructions
+
+1. Hit green button below and verify *"You are authorized!"* response returned successfully
+1. Observe difference between source and request origins, confirming cross-origin request

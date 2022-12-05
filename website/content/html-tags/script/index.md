@@ -4,4 +4,12 @@ shortTitle: "<script> tag"
 weight: 3
 ---
 
-Using a `<script>` tag triggers a request for the script, in this case cross-origin.
+### Summary
+
+Using a `<script>` tag triggers a cross-origin request for JavaScript code.
+The browser allows these requests by default, without requiring CORS.
+
+### Instructions
+
+1. Hit green button below and see time updated by loaded JavaScript
+1. Observe difference between source and request origins, confirming cross-origin request

@@ -1,5 +1,5 @@
 ---
 title: "Pre-flighted JavaScript requests"
-summary: "Cross-domain JavaScript requests triggering the browser to send a pre-flight request."
+summary: "CORS cross-domain JavaScript requests triggering the browser to send a pre-flight request."
 weight: 3
 ---
