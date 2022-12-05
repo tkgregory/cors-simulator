@@ -46,7 +46,7 @@
         {{ with $orderedPages.Prev . }}
 
         <a href="{{ .Permalink }}">
-            <small>&lt;&lt;</small> Previous
+            &laquo; Previous
         </a>
         {{ end }}
     </div>
@@ -60,7 +60,7 @@
     <div class="navigation-next">
         {{ with $orderedPages.Next . }}
         <a href="{{ .Permalink }}">
-            Next <small>&gt;&gt;</small>
+            Next &raquo;
         </a>
         {{ end }}
     </div>
