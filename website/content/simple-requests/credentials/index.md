@@ -1,7 +1,7 @@
 ---
 title: "Cross-origin GET request including credentials"
 shortTitle: "Include credentials"
-weight: 4
+weight: 2
 ---
 
 A cross-origin request can be configured to include credentials.
