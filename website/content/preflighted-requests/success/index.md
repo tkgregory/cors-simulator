@@ -1,5 +1,5 @@
 ---
-title: "Cross-origin PUT request with correct CORS setup"
+title: "PUT request with correct CORS setup"
 shortTitle: "Correct CORS setup"
 weight: 1
 ---

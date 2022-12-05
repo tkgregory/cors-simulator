@@ -108,6 +108,15 @@ functions:
       - httpApi:
           path: /put-success
           method: options
+  putExposeHeader:
+    handler: functions/put/expose-header.handler
+    events:
+      - httpApi:
+          path: /put-expose-header
+          method: put          
+      - httpApi:
+          path: /put-expose-header
+          method: options          
 resources:
   Description: Infrastructure for Interactive CORS Simulator
   Resources:

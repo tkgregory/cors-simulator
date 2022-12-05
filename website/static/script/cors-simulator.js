@@ -1,4 +1,4 @@
-async function udpateForSuccessWithResponse(requestOrigin, response) {
+async function updateForSuccessWithResponse(requestOrigin, response) {
     $("#try-it-out").html("Success!");
     
     const json = await response.json();
