@@ -10,6 +10,7 @@
         {{ range $section := .Site.Sections }}
         <div class="index-section">
             <h2>{{ $section.Title }}</h2>
+            <p>{{ $section.Params.Summary }}</p>
             <ul>
                 {{ range $index, $page := (where .Site.Pages "Section" $section.Section) }}
                 {{ if eq $page.BundleType "leaf" }}

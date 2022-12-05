@@ -15,4 +15,4 @@ fetch(requestURL, {
 })
 ```
 
-The response to both the pre-flight and main request must include the `Access-Control-Allow-Credentials` header with a value of `true`:
+The response to both the pre-flight and main request must include the `Access-Control-Allow-Credentials` header with a value of `true`.
