@@ -10,7 +10,7 @@ module.exports.handler = async (event) => {
     },
     body: JSON.stringify(
       {
-        message: 'Success response from POST request'
+        message: 'Success response from PUT request'
       }
     )
   };

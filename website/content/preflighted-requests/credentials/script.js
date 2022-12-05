@@ -1,15 +1,13 @@
 registerDynamicContent(function () {
-    const requestURL = apiBaseURL + "post-set-cookie";
+    const requestURL = apiBaseURL + "put-set-cookie";
 
     fetch(requestURL, {
-        method: 'POST',
-        headers: { "Content-type": "application/json" },
+        method: 'PUT',
         credentials: 'include'
     })
         .then((response) => {
-            return fetch(apiBaseURL + "post-requires-cookie", {
-                method: 'POST',
-                headers: { "Content-Type": "application/json" },
+            return fetch(apiBaseURL + "put-requires-cookie", {
+                method: 'PUT',
                 credentials: 'include'
             });
         })

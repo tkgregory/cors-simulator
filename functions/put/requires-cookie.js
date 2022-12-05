@@ -6,22 +6,23 @@ module.exports.handler = async (event) => {
       statusCode: 200,
       headers: {
         "Access-Control-Allow-Origin": process.env.ALLOWED_ORIGINS,
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Credentials": true,        
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Methods": "PUT"
       }
     };
   }
 
+  const isAuthorized = event.cookies.includes("AuthorizationPreflightedRequest=123abc");
+
   return {
-    statusCode: 200,
+    statusCode: isAuthorized ? 200 : 401,
     headers: {
       "Access-Control-Allow-Origin": process.env.ALLOWED_ORIGINS,
       "Access-Control-Allow-Credentials": true,
-      "Set-Cookie": "AuthorizationPreflightedRequest=123abc; SameSite=None; Secure"
     },
     body: JSON.stringify(
       {
-        message: 'Success response from POST request'
+        message: isAuthorized ? "You are authorized!" : "You are unauthorized. Go away!",
       }
     )
   };

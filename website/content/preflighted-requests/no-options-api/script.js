@@ -1,9 +1,8 @@
 registerDynamicContent(function () {
-    const requestURL = apiBaseURL + "/post-no-options-api";
+    const requestURL = apiBaseURL + "/put-no-options-api";
 
     fetch(requestURL, {
-        method: 'POST',
-        headers: {"Content-type": "application/json"}
+        method: 'PUT',
     })
         .then((response) => {
             udpateForSuccessWithResponse(new URL(requestURL).origin, response);

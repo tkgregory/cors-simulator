@@ -62,51 +62,51 @@ functions:
           method: get          
     environment:
       ALLOWED_ORIGINS: ${param:apiAllowedOrigins}               
-  postNoAllowOriginHeader:
-    handler: functions/post/no-allow-origin-header.handler
+  putNoAllowOriginHeader:
+    handler: functions/put/no-allow-origin-header.handler
     events:
       - httpApi:
-          path: /post-no-allow-origin-header
-          method: post
+          path: /put-no-allow-origin-header
+          method: put
       - httpApi:
-          path: /post-no-allow-origin-header
+          path: /put-no-allow-origin-header
           method: options
-  postNoOptionsApi:
-    handler: functions/post/no-allow-origin-header.handler
+  putNoOptionsApi:
+    handler: functions/put/no-allow-origin-header.handler
     events:
       - httpApi:
-          path: /post-no-options-api
-          method: post        
-  postSetCookie:
-    handler: functions/post/set-cookie.handler
+          path: /put-no-options-api
+          method: put        
+  putSetCookie:
+    handler: functions/put/set-cookie.handler
     events:
       - httpApi:
-          path: /post-set-cookie
-          method: post        
+          path: /put-set-cookie
+          method: put        
       - httpApi:
-          path: /post-set-cookie
+          path: /put-set-cookie
           method: options                
     environment:
       ALLOWED_ORIGINS: ${param:apiAllowedOrigins}
-  postRequiresCookie:
-    handler: functions/post/requires-cookie.handler
+  putRequiresCookie:
+    handler: functions/put/requires-cookie.handler
     events:
       - httpApi:
-          path: /post-requires-cookie
-          method: post          
+          path: /put-requires-cookie
+          method: put          
       - httpApi:
-          path: /post-requires-cookie
+          path: /put-requires-cookie
           method: options
     environment:
       ALLOWED_ORIGINS: ${param:apiAllowedOrigins}          
-  postSuccess:
-    handler: functions/post/success.handler
+  putSuccess:
+    handler: functions/put/success.handler
     events:
       - httpApi:
-          path: /post-success
-          method: post          
+          path: /put-success
+          method: put          
       - httpApi:
-          path: /post-success
+          path: /put-success
           method: options
 resources:
   Description: Infrastructure for Interactive CORS Simulator

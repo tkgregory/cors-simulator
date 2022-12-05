@@ -1,5 +1,5 @@
 ---
-title: "Cross-origin POST request including credentials"
+title: "Cross-origin PUT request including credentials"
 shortTitle: "Include credentials"
 weight: 4
 ---
