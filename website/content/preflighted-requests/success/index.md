@@ -4,8 +4,13 @@ shortTitle: "Correct CORS setup"
 weight: 1
 ---
 
-JavaScript code can make a Cross-origin PUT request.
+### Summary
+JavaScript code can make a cross-origin `PUT` request.
 
-The pre-flight response includes the correctly configured `Access-Control-Allow-Origin` header, so the browser then makes the main request.
+The pre-flight response must include the correctly configured `Access-Control-Allow-Origin` header.
+The response to the main request must include the same header.
 
-The response to the main request also includes a valid `Access-Control-Allow-Origin` header, so the browser accepts it.
+### Instructions
+1. Press F12 to open browser *Developer Tools*
+1. Open *Network* tab and filter by path *put-success*
+1. Hit green button below and observe 1 pre-flight and 1 main request
