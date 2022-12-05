@@ -4,8 +4,8 @@ shortTitle: "Max age"
 weight: 5
 ---
 
-JavaScript code can make a Cross-origin PUT request.
-
+### Summary
+JavaScript code can make a cross-origin `PUT` request.
 The pre-flight response can include a `Access-Control-Max-Age` header, causing the browser to cache the response for the specified number of seconds.
 
 ### Instructions
