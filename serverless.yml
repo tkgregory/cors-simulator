@@ -61,7 +61,13 @@ functions:
           path: /get-requires-cookie
           method: get          
     environment:
-      ALLOWED_ORIGINS: ${param:apiAllowedOrigins}               
+      ALLOWED_ORIGINS: ${param:apiAllowedOrigins}       
+  getExposeHeader:
+    handler: functions/get/expose-header.handler
+    events:
+      - httpApi:
+          path: /get-expose-header
+          method: get          
   putNoAllowOriginHeader:
     handler: functions/put/no-allow-origin-header.handler
     events:
