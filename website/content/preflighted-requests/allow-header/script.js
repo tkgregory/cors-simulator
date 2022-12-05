@@ -1,10 +1,9 @@
 registerDynamicContent(function () {
-    const requestURL = new URL(apiBaseURL + "put-allow-header");
+    const requestURL = new URL(apiBaseURL + "get-allow-header");
     const headerName = "cool-stuff";
     const headerValue = "pi=3.14";
 
     fetch(requestURL.toString(), {
-        method: 'PUT',
         headers: {
             [headerName]: headerValue
         },
