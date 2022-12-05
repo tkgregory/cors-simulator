@@ -17,7 +17,7 @@ module.exports.handler = async (event) => {
     headers: {
       "Access-Control-Allow-Origin": process.env.ALLOWED_ORIGINS,
       "Access-Control-Allow-Credentials": true,
-      "Set-Cookie": "Authorization=123abc; SameSite=None; Secure"
+      "Set-Cookie": "AuthorizationPreflightedRequest=123abc; SameSite=None; Secure"
     },
     body: JSON.stringify(
       {
