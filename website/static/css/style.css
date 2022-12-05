@@ -52,6 +52,7 @@ a:hover {
 
 .dynamic {
     border: medium dotted #4CAF50;
+    border-radius: 12px;
     margin-top: 15px;
     padding: 10px;
     position: relative;
