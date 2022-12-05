@@ -117,14 +117,14 @@ functions:
       - httpApi:
           path: /put-expose-header
           method: options    
-  putAllowHeader:
-    handler: functions/put/allow-header.handler
+  getAllowHeader:
+    handler: functions/get/allow-header.handler
     events:
       - httpApi:
-          path: /put-allow-header
-          method: put          
+          path: /get-allow-header
+          method: get          
       - httpApi:
-          path: /put-allow-header
+          path: /get-allow-header
           method: options                   
 resources:
   Description: Infrastructure for Interactive CORS Simulator

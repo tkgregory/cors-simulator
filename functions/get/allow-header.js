@@ -9,7 +9,7 @@ module.exports.handler = async (event) => {
       statusCode: 200,
       headers: {
         "Access-Control-Allow-Origin": allowedOrigins,
-        "Access-Control-Allow-Methods": "PUT",
+        "Access-Control-Allow-Methods": "GET",
         "Access-Control-Allow-Headers": headerName
       }
     };
@@ -24,7 +24,7 @@ module.exports.handler = async (event) => {
     },
     body: JSON.stringify(
       {
-        message: 'Success response from PUT request. Thanks for "' + headerName + ": " + headerValue + '"'
+        message: 'Success response from GET request. Thanks for "' + headerName + ": " + headerValue + '"'
       }
     )
   };
