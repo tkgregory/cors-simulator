@@ -46,6 +46,22 @@ functions:
       - httpApi:
           path: /get-misconfigured-origin
           method: get               
+  getSetCookie:
+    handler: functions/get/set-cookie.handler
+    events:
+      - httpApi:
+          path: /get-set-cookie
+          method: get        
+    environment:
+      ALLOWED_ORIGINS: ${param:apiAllowedOrigins}
+  getRequiresCookie:
+    handler: functions/get/requires-cookie.handler
+    events:
+      - httpApi:
+          path: /get-requires-cookie
+          method: get          
+    environment:
+      ALLOWED_ORIGINS: ${param:apiAllowedOrigins}               
   postNoAllowOriginHeader:
     handler: functions/post/no-allow-origin-header.handler
     events:
