@@ -11,5 +11,5 @@ The browser allows these requests by default, without requiring CORS.
 
 ### Instructions
 
-1. Hit green button below and see time updated by loaded JavaScript
+1. Hit green button below and see time updated by dynamically loaded JavaScript
 1. Observe difference between source and request origins, confirming cross-origin request

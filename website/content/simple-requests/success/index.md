@@ -11,5 +11,5 @@ The response must include the correctly configured `Access-Control-Allow-Origin`
 
 ### Instructions
 
-1. Hit green button below and see `best-header-ever` header value
+1. Hit green button below and see successful response returned
 1. Observe difference between source and request origins, confirming cross-origin request

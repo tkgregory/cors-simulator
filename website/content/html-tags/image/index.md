@@ -11,5 +11,5 @@ The browser allows these requests by default, without requiring CORS.
 
 ### Instructions
 
-1. Hit green button below and see image appear
+1. Hit green button below and see dynamically loaded image appear
 1. Observe  difference between *source* and *request* origins, confirming cross-origin request
