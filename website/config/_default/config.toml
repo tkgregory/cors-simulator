@@ -1,6 +1,6 @@
-baseURL = 'https://cors-simulator-dev.tomgregory.com/'
+baseURL = 'https://corssimulator-dev.tomgregory.com/'
 languageCode = 'en-gb'
 title = 'CORS Simulator'
 [params]
-    apiBaseURL = "https://api.cors-simulator-dev.tomgregory.com/"
-    assetsBaseURL = "https://assets.cors-simulator-dev.tomgregory.com/"
+    apiBaseURL = "https://api.corssimulator-dev.tomgregory.com/"
+    assetsBaseURL = "https://assets.corssimulator-dev.tomgregory.com/"
