@@ -1,7 +1,8 @@
 ---
 title: "PUT request with response exposing a header"
 shortTitle: "Expose response header"
-weight: 23
+weight: 24
+requestMethod: PUT
 ---
 
 ### Summary

@@ -1,7 +1,8 @@
 ---
 title: "PUT request including credentials"
 shortTitle: "Include credentials"
-weight: 24
+weight: 25
+requestMethod: PUT
 ---
 
 ### Summary

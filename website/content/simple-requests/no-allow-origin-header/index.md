@@ -2,6 +2,7 @@
 title: "GET missing Access-Control-Allow-Origin header"
 shortTitle: "Missing Access-Control-Allow-Origin header"
 weight: 14
+requestMethod: GET
 ---
 
 ### Summary
