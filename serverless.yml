@@ -6,12 +6,12 @@ provider:
   region: eu-west-1
 params:
   default:
-    domainName: cors-simulator-${sls:stage}.tomgregory.com
+    domainName: corssimulator-${sls:stage}.tomgregory.com
     assetsS3BucketName: cors-simulator-${sls:stage}-assets
     websiteS3BucketName: cors-simulator-${sls:stage}-website
     apiAllowedOrigins: https://${param:domainName}
   prod:
-    domainName: cors-simulator.tomgregory.com
+    domainName: corssimulator.tomgregory.com
     assetsS3BucketName: cors-simulator-assets
     websiteS3BucketName: cors-simulator-website
     apiAllowedOrigins: https://${param:domainName}
