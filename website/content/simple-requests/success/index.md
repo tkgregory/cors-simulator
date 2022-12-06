@@ -1,7 +1,7 @@
 ---
 title: "GET request with correct CORS setup"
 shortTitle: "Correct CORS setup"
-weight: 1
+weight: 11
 ---
 
 ### Summary

@@ -39,8 +39,7 @@
 </div>
 
 <div class="navigation">
-    {{ $pages := where site.RegularPages "Section" .Section }}
-    {{ $orderedPages := $pages.ByWeight.Reverse }}
+    {{ $orderedPages := site.RegularPages.ByWeight.Reverse }}
 
     <div class="navigation-previous">
         {{ with $orderedPages.Prev . }}
