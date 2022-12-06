@@ -2,6 +2,7 @@
 title: "GET request including credentials"
 shortTitle: "Include credentials"
 weight: 13
+requestMethod: GET
 ---
 
 ### Summary

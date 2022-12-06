@@ -2,6 +2,7 @@
 title: "GET request with response exposing a header"
 shortTitle: "Expose response header"
 weight: 12
+requestMethod: GET
 ---
 
 ### Summary

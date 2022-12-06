@@ -114,6 +114,15 @@ functions:
       - httpApi:
           path: /put-success
           method: options
+  postSuccess:
+    handler: functions/post/success.handler
+    events:
+      - httpApi:
+          path: /post-success
+          method: post          
+      - httpApi:
+          path: /post-success
+          method: options          
   putMaxAge:
     handler: functions/put/max-age.handler
     events:

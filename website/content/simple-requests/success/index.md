@@ -2,6 +2,7 @@
 title: "GET request with correct CORS setup"
 shortTitle: "Correct CORS setup"
 weight: 11
+requestMethod: GET
 ---
 
 ### Summary

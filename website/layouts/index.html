@@ -16,7 +16,10 @@
                 {{ if eq $page.BundleType "leaf" }}
                 <li>
                     <a href="{{.Permalink}}">
-                        {{ $page.Params.ShortTitle }}
+                        {{ $page.Params.ShortTitle }} 
+                        {{ if $page.Params.RequestMethod }}
+                            <span class="request-method">{{ $page.Params.RequestMethod }}</span>
+                        {{ end }}
                     </a>
                 </li>
                 {{ end }}

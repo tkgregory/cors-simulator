@@ -1,7 +1,8 @@
 ---
 title: "PUT request with max age"
 shortTitle: "Max age"
-weight: 25
+weight: 26
+requestMethod: PUT
 ---
 
 ### Summary

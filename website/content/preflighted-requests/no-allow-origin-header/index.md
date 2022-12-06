@@ -1,7 +1,8 @@
 ---
 title: "PUT request with missing Access-Control-Allow-Origin header"
 shortTitle: "Missing Access-Control-Allow-Origin header"
-weight: 27
+weight: 28
+requestMethod: PUT
 ---
 
 ### Summary

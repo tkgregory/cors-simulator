@@ -2,6 +2,7 @@
 title: "GET misconfigured Access-Control-Allow-Origin header"
 shortTitle: "Misconfigured Access-Control-Allow-Origin header"
 weight: 15
+requestMethod: GET
 ---
 
 ### Summary

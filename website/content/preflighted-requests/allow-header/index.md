@@ -1,7 +1,8 @@
 ---
 title: "GET request with custom request header"
 shortTitle: "Custom request header"
-weight: 22
+weight: 23
+requestMethod: PUT
 ---
 
 ### Summary

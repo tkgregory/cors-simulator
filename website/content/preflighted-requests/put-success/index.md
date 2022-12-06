@@ -2,6 +2,7 @@
 title: "PUT request with correct CORS setup"
 shortTitle: "Correct CORS setup"
 weight: 21
+requestMethod: PUT
 ---
 
 ### Summary
