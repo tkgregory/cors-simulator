@@ -11,5 +11,5 @@ The browser allows these requests by default, without requiring CORS.
 
 ### Instructions
 
-1. Hit green button below and see text styles applied from loaded stylesheet
+1. Hit green button below and see text styles applied from dynamically loaded stylesheet
 1. Observe difference between source and request origins, confirming cross-origin request

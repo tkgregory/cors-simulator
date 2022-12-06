@@ -5,7 +5,7 @@ weight: 24
 ---
 
 ### Summary
-A cross-origin request can be configured to include credentials.
+A cross-origin `PUT` request can be configured to include credentials.
 
 Add `credentials: 'include'` to the JavaScript `fetch` call, to *send* or *receive* cookies.
 

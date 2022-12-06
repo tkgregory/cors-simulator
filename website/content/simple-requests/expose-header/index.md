@@ -11,5 +11,5 @@ The `Access-Control-Expose-Headers` response header must be set, with a comma-se
 
 ### Instructions
 
-1. Hit green button below and see `GET` response body
+1. Hit green button below and see `best-header-ever` header value
 1. Observe difference between source and request origins, confirming cross-origin request
