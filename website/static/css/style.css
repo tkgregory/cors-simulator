@@ -11,7 +11,7 @@ body {
     margin: auto;
     text-align: left;
     padding: 20px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     max-width: 60%;
     background-color: rgb(20, 20, 20);
     min-height: 100vh;
@@ -35,7 +35,7 @@ a:hover {
 #navigation a {
     text-decoration: none;
 }
-  
+
 .info-box {
     display: block;
     text-align: left;
@@ -161,8 +161,19 @@ img {
     text-align: right;
 }
 
+@media (min-width: 50em) {
+    .navigation {
+        display: grid;
+        grid-template-columns: 4fr 1fr 4fr;
+    }
+}
+
 .navigation-next {
     text-align: left;
+}
+
+.navigation-index {
+    text-align: center;
 }
 
 [class^="navigation-"] {
