@@ -1,7 +1,7 @@
 ---
 title: "PUT request with missing Options API"
 shortTitle: "Missing Options API"
-weight: 6
+weight: 26
 ---
 
 ### Summary

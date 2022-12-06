@@ -1,7 +1,7 @@
 ---
 title: "GET request with custom request header"
 shortTitle: "Custom request header"
-weight: 2
+weight: 22
 ---
 
 ### Summary

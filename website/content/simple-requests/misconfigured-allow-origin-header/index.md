@@ -1,7 +1,7 @@
 ---
 title: "GET misconfigured Access-Control-Allow-Origin header"
 shortTitle: "Misconfigured Access-Control-Allow-Origin header"
-weight: 5
+weight: 15
 ---
 
 ### Summary

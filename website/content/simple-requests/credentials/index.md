@@ -1,7 +1,7 @@
 ---
 title: "GET request including credentials"
 shortTitle: "Include credentials"
-weight: 3
+weight: 13
 ---
 
 ### Summary

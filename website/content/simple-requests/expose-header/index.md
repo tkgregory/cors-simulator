@@ -1,7 +1,7 @@
 ---
 title: "GET request with response exposing a header"
 shortTitle: "Expose response header"
-weight: 2
+weight: 12
 ---
 
 ### Summary
