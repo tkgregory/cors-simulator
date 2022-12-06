@@ -1,4 +1,5 @@
 baseURL = 'https://corssimulator.tomgregory.com/'
+googleAnalytics = 'UA-137983898-3'
 [params]
     apiBaseURL = "https://api.corssimulator.tomgregory.com/"
     assetsBaseURL = "https://assets.corssimulator.tomgregory.com/"
