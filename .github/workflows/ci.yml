@@ -1,0 +1,52 @@
+name: CORS Simulator
+on:
+  push:
+    branches: [ main ]
+    tags: [v*]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.107.0'
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18        
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+        aws-region: eu-west-1      
+    - run: npm ci
+    - name: Build website dev
+      run: hugo -s website --environment development
+    - name: Deploy infrastructure to dev
+      uses: serverless/github-action@v3.1
+      with:
+        args: deploy --stage dev  
+    - name: Deploy website to dev
+      uses: serverless/github-action@v3.1
+      with:
+        args: s3sync --stage dev        
+    - name: Build website prod
+      run: hugo -s website
+      if: startsWith(github.ref, 'refs/tags/v')            
+    - name: Deploy infrastructure to prod
+      uses: serverless/github-action@v3.1
+      with:
+        args: deploy --stage prod  
+      if: startsWith(github.ref, 'refs/tags/v')      
+    - name: Deploy website to prod
+      uses: serverless/github-action@v3.1
+      with:
+        args: s3sync --stage prod
+      if: startsWith(github.ref, 'refs/tags/v')

@@ -4,6 +4,11 @@
 
 A set of examples to demonstrate important CORS concepts.
 
+
+## Useful links
+* [CORS Simulator](https://corssimulator.tomgregory.com/)
+* [Ultimate CORS Guide for Developers](https://tomgregory.com/cors-guide/)
+
 ## Running
 
 `hugo server -s website`
