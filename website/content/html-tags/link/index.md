@@ -2,6 +2,7 @@
 title: "Cross-origin request from <link> tag"
 shortTitle: "<link> tag"
 weight: 2
+requestMethod: GET
 ---
 
 ### Summary

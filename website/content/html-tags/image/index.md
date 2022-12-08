@@ -2,6 +2,7 @@
 title: "Cross-origin request from <img> tag"
 shortTitle: "<img> tag"
 weight: 1
+requestMethod: GET
 ---
 
 ### Summary
