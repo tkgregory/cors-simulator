@@ -5,7 +5,7 @@ module.exports.handler = async (event) => {
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin": process.env.ALLOWED_ORIGINS,
+        "Access-Control-Allow-Origin": process.env.ALLOWED_ORIGIN,
         "Access-Control-Allow-Credentials": true, 
         "Access-Control-Allow-Methods": "PUT"       
       }
@@ -15,7 +15,7 @@ module.exports.handler = async (event) => {
   return {
     statusCode: 200,
     headers: {
-      "Access-Control-Allow-Origin": process.env.ALLOWED_ORIGINS,
+      "Access-Control-Allow-Origin": process.env.ALLOWED_ORIGIN,
       "Access-Control-Allow-Credentials": true,
       "Set-Cookie": "AuthorizationPreflightedRequest=123abc; SameSite=None; Secure"
     },

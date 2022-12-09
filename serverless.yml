@@ -9,12 +9,12 @@ params:
     domainName: corssimulator-${sls:stage}.tomgregory.com
     assetsS3BucketName: cors-simulator-${sls:stage}-assets
     websiteS3BucketName: cors-simulator-${sls:stage}-website
-    apiAllowedOrigins: https://${param:domainName}
+    apiAllowedOrigin: https://${param:domainName}
   prod:
     domainName: corssimulator.tomgregory.com
     assetsS3BucketName: cors-simulator-assets
     websiteS3BucketName: cors-simulator-website
-    apiAllowedOrigins: https://${param:domainName}
+    apiAllowedOrigin: https://${param:domainName}
 plugins:
   - serverless-s3-sync
   - serverless-certificate-creator
@@ -40,6 +40,8 @@ functions:
       - httpApi:
           path: /get-success
           method: get       
+    environment:
+      ALLOWED_ORIGIN: ${param:apiAllowedOrigin}          
   getMisconfiguredOrigin:
     handler: functions/get/misconfigured-origin.handler
     events:
@@ -53,7 +55,7 @@ functions:
           path: /get-set-cookie
           method: get        
     environment:
-      ALLOWED_ORIGINS: ${param:apiAllowedOrigins}
+      ALLOWED_ORIGIN: ${param:apiAllowedOrigin}
   getRequiresCookie:
     handler: functions/get/requires-cookie.handler
     events:
@@ -61,13 +63,15 @@ functions:
           path: /get-requires-cookie
           method: get          
     environment:
-      ALLOWED_ORIGINS: ${param:apiAllowedOrigins}       
+      ALLOWED_ORIGIN: ${param:apiAllowedOrigin}       
   getExposeHeader:
     handler: functions/get/expose-header.handler
     events:
       - httpApi:
           path: /get-expose-header
-          method: get          
+          method: get         
+    environment:
+      ALLOWED_ORIGIN: ${param:apiAllowedOrigin}           
   putNoAllowOriginHeader:
     handler: functions/put/no-allow-origin-header.handler
     events:
@@ -77,6 +81,8 @@ functions:
       - httpApi:
           path: /put-no-allow-origin-header
           method: options
+    environment:
+      ALLOWED_ORIGIN: ${param:apiAllowedOrigin}          
   putNoOptionsApi:
     handler: functions/put/no-allow-origin-header.handler
     events:
@@ -93,7 +99,7 @@ functions:
           path: /put-set-cookie
           method: options                
     environment:
-      ALLOWED_ORIGINS: ${param:apiAllowedOrigins}
+      ALLOWED_ORIGIN: ${param:apiAllowedOrigin}
   putRequiresCookie:
     handler: functions/put/requires-cookie.handler
     events:
@@ -104,7 +110,7 @@ functions:
           path: /put-requires-cookie
           method: options
     environment:
-      ALLOWED_ORIGINS: ${param:apiAllowedOrigins}          
+      ALLOWED_ORIGIN: ${param:apiAllowedOrigin}          
   putSuccess:
     handler: functions/put/success.handler
     events:
@@ -114,6 +120,8 @@ functions:
       - httpApi:
           path: /put-success
           method: options
+    environment:
+      ALLOWED_ORIGIN: ${param:apiAllowedOrigin}          
   postSuccess:
     handler: functions/post/success.handler
     events:
@@ -122,7 +130,9 @@ functions:
           method: post          
       - httpApi:
           path: /post-success
-          method: options          
+          method: options   
+    environment:
+      ALLOWED_ORIGIN: ${param:apiAllowedOrigin}                 
   putMaxAge:
     handler: functions/put/max-age.handler
     events:
@@ -131,7 +141,9 @@ functions:
           method: put          
       - httpApi:
           path: /put-max-age
-          method: options          
+          method: options
+    environment:
+      ALLOWED_ORIGIN: ${param:apiAllowedOrigin}                    
   putExposeHeader:
     handler: functions/put/expose-header.handler
     events:
@@ -141,6 +153,8 @@ functions:
       - httpApi:
           path: /put-expose-header
           method: options    
+    environment:
+      ALLOWED_ORIGIN: ${param:apiAllowedOrigin}          
   getAllowHeader:
     handler: functions/get/allow-header.handler
     events:
@@ -149,7 +163,9 @@ functions:
           method: get          
       - httpApi:
           path: /get-allow-header
-          method: options                   
+          method: options   
+    environment:
+      ALLOWED_ORIGIN: ${param:apiAllowedOrigin}                          
 resources:
   Description: Infrastructure for Interactive CORS Simulator
   Resources:
